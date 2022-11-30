@@ -119,7 +119,6 @@
                                     <li>상품사이즈 : ${order.productOptionValue}</li>
                                     <li>상품 수량 : ${order.productCount}</li>
                                     <li>상품금액 : <fmt:formatNumber value="${order.productPrice}" pattern="#,###"/> 원</li>
-                                    <li>상품날짜 : ${order.productCount}</li>
                                     <li><button type="submit">리뷰쓰기</button></li>
                                 </ul>
                                 <input type="hidden" name="userIndex" value="${loginUser.userIndex}"></input>

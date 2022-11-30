@@ -2,17 +2,6 @@
 <html>
 <head>
     <title>kubg Admin</title>
-
-    <!-- <script src="/resources/jquery/jquery-3.6.0.min.js"></script> -->
-    <!--   <script src="/resources/jquery/jquery-3.6.0.min.js"></script> -->
-    <script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="/webjars/bootstrap/5.2.0/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="/webjars/bootstrap/5.2.0/css/bootstrap-theme.min.css"> -->
-    <script src="/webjars/bootstrap/5.2.0/js/bootstrap.min.js"></script>
-
-    <script src="/webjars/ckeditor/31.0.0/classic/ckeditor.js"></script>
-
     <style>
         body {
             font-family: '맑은 고딕', verdana;
@@ -97,10 +86,6 @@
             display: inline-block;
             margin-right: 10px;
         }
-    </style>
-
-
-    <style>
         .inputArea {
             margin: 10px 0;
         }
@@ -133,26 +118,10 @@
         }
 
     </style>
-
-</head>
+ <%@ include file="../include/header.jsp" %>	
 <body>
 <div id="root">
-    <%--  <header id="header">--%>
-    <%--    <div id="header_box">--%>
-    <%--      <%@ include file="../include/header.jsp" %>--%>
-    <%--    </div>--%>
-    <%--  </header>--%>
-
-    <%--  <nav id="nav">--%>
-    <%--    <div id="nav_box">--%>
-    <%--      <%@ include file="../include/nav.jsp" %>--%>
-    <%--    </div>--%>
-    <%--  </nav>--%>
-
     <section id="container">
-        <%--    <aside>--%>
-        <%--      <%@ include file="../include/aside.jsp" %>--%>
-        <%--    </aside>--%>
         <div id="container_box">
             <h2>상품 등록</h2>
 

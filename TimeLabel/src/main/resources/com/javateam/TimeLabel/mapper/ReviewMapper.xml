@@ -32,7 +32,7 @@
   	<!-- 댓글 조회 -->
   	<select id="getReviewList" resultType="com.javateam.TimeLabel.model.ReviewDTO">
   		select * FROM VIEW_REVIEW 
-  		where PRODUCT_INDEX=#{productIndex} order by review_index limit #{page},10;
+  		order by review_index limit #{page},10
   	</select>
   	
   	<select id="getReviewTotal" resultType="int">

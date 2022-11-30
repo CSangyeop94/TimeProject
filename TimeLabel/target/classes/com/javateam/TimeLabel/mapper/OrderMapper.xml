@@ -23,7 +23,7 @@
         <result property="productThumbImage" column="PRODUCT_DETAIL_IMAGE1"/>
         <result property="productOptionValue" column="PRODUCT_OPTION_VALUE"/>
         <result property="productCount" column="PRODUCT_COUNT"/>
-        <result property="ProductPrice" column="PRODUCT_PRICE"/>
+        <result property="productPrice" column="DISCOUNTED_PRICE"/>
     </resultMap>
 
 
