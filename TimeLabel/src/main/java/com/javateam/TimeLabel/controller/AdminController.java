@@ -6,6 +6,8 @@ import com.javateam.TimeLabel.service.AdminService;
 import com.javateam.TimeLabel.service.OrderService;
 import com.javateam.TimeLabel.service.UserService;
 import com.javateam.TimeLabel.util.UploadFileUtils;
+
+import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.List;
 
-
+@Slf4j
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -91,8 +93,13 @@ public class AdminController {
             System.out.println("최종fileName:" + fileName);
             // gdsImg에 원본 파일 경로 + 파일명 저장
             vo.setProductMainImage(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+            vo.setProductMainImage(vo.getProductMainImage().replaceAll("\\\\", "/"));
+            log.info("메인이미지:{}", vo.getProductMainImage());
             // gdsThumbImg에 썸네일 파일 경로 + 썸네일 파일명 저장
             vo.setProductThumbImage(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
+            vo.setProductThumbImage(vo.getProductThumbImage().replaceAll("\\\\", "/"));
+            log.info("썸네일이미지:{}", vo.getProductThumbImage());
+            
         }
         adminService.register(vo);
 

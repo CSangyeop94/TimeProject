@@ -62,9 +62,9 @@
 				<span style = "color:red" class="final_mail_ck">이메일을 입력해주세요.</span>
 			</div>
 			<div class="mobile_wrap">
-				<div class="mobile_name" name="userContact">연락처</div>
+				<div class="mobile_name" name="userMobile">연락처</div>
 				<div class="mobile_input_box">
-					<input class="mobile_input" name="userContact" placeholder="ex) 010-0000-0000">
+					<input class="mobile_input" name="userMobile" placeholder="ex) 010-0000-0000">
 				</div>
 				<span style = "color:red" class="final_mobile_ck">연락처를 입력해주세요.</span>
 			</div>
@@ -116,6 +116,14 @@ var mobileCheck = false;		// 연락처
 
 $(document).ready(function(){
 	//회원가입 버튼(회원가입 기능 작동)
+	
+	$('.final_id_ck').css('display', 'block');
+	$('.final_pw_ck').css('display','block');
+	$('.final_pwck_ck').css('display','block');
+	$('.final_name_ck').css('display', 'block');
+	$('.final_mail_ck').css('display','block');
+	$('.final_mobile_ck').css('display', 'block');
+	
 	$(".join_button").click(function(){
 		
 		/* 입력값 변수 */
@@ -206,10 +214,10 @@ $(document).ready(function(){
         
         /* 최종 유효성 검사 */
         if(idCheck&&idckCheck&&pwCheck&&pwckCheck&&pwckcorCheck&&nameCheck&&mailCheck&&mobileCheck ){
-        	
     		$("#join_form").submit();
-    		
         }
+        else
+        	alert("정보가 미입력된 칸이 있습니다.");
         
         return false;
 		
@@ -219,12 +227,17 @@ $(document).ready(function(){
 
 //아이디 중복검사
 $('.id_input').on("propertychange change keyup paste input", function(){
-
-	// console.log("input 변화 감지 테스트 ");
 	
 	var userId = $('.id_input').val();		// .id_input에 입력되는 값
+	if(userId!=="")
+		$('.final_id_ck').css('display', 'none');
+	else
+		{
+		$('.final_id_ck').css('display', 'block');
+		$('.id_input_re_1').css('display', 'none');
+		}
 	var data = {userId : userId}				// '컨트롤러에 넘길 데이터 이름' : '데이터(.id_input에 입력되는 값)'
-	
+	if(userId!=="")
 	$.ajax({
 		type : "post",
 		url : "/user/userIdCheck",
@@ -321,6 +334,40 @@ function execution_daum_address(){
 	
 }
 
+
+$('.pw_input').on("propertychange change keyup paste input", function(){
+	var pw = $('.pw_input').val();
+	if(pw!=="")
+	 $('.final_pw_ck').css('display', 'none');
+	else
+		$('.final_pw_ck').css('display', 'block');
+});
+
+$('.user_input').on("propertychange change keyup paste input", function(){
+	var userId = $('.user_input').val();
+	if(userId!=="")
+	 $('.final_name_ck').css('display', 'none');
+	else 
+	$('.final_name_ck').css('display', 'block');
+});
+
+$('.mail_input').on("propertychange change keyup paste input", function(){
+	var mail=$('.mail_input').val();
+	if(mail!=="")
+	 $('.final_mail_ck').css('display', 'none');
+	else 
+	$('.final_mail_ck').css('display', 'block');
+});
+
+$('.mobile_input').on("propertychange change keyup paste input", function(){
+	var mobile=$('.mobile_input').val();
+	if(mobile!=="")
+	 $('.final_mobile_ck').css('display', 'none');
+	else 
+	$('.final_mobile_ck').css('display', 'block');
+});
+
+
 /* 비밀번호 확인 일치 여부 */
 
 $('.pwck_input').on("propertychange change keyup paste input", function(){
@@ -328,7 +375,13 @@ $('.pwck_input').on("propertychange change keyup paste input", function(){
 	var pw = $('.pw_input').val();
     var pwck = $('.pwck_input').val();
     $('.final_pwck_ck').css('display', 'none');
-    
+    if(pwck==="")
+    	{
+    	 $('.pwck_input_re_1').css('display','none');
+    	 $('.pwck_input_re_2').css('display','none');
+    	 $('.final_pwck_ck').css('display','block');
+    	}
+    else{
     if(pw == pwck){
     	
         $('.pwck_input_re_1').css('display','block');
@@ -342,8 +395,9 @@ $('.pwck_input').on("propertychange change keyup paste input", function(){
         pwckcorCheck = false;
         
     }        
-    
+    }	
 });  
+
 
 </script>
 

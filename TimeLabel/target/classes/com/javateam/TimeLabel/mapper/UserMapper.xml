@@ -39,7 +39,7 @@ USER_ADDRESS, USER_ADDRESS_DETAIL
 	<insert id="userJoin" parameterType="com.javateam.TimeLabel.model.UserVO" useGeneratedKeys="true">
 
 		insert into USER (USER_ID, USER_PW, USER_NAME, USER_EMAIL, USER_MOBILE, USER_ZIP, USER_ADDRESS, USER_ADDRESS_DETAIL)
-		values(#{userId}, #{userPw}, #{userName}, #{userEmail}, #{userContact}, #{userZip}, #{userAddress}, #{userAddressDetail})
+		values(#{userId}, #{userPw}, #{userName}, #{userEmail}, #{userMobile}, #{userZip}, #{userAddress}, #{userAddressDetail})
 
 	</insert>
 

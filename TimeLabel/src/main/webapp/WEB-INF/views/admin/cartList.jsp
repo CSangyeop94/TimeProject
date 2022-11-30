@@ -23,17 +23,6 @@
     </div>
   </header>
 
-  <nav id="nav">
-    <div id ="nav_box">
-      <%@ include file="../include/nav.jsp"%>
-    </div>
-  </nav>
-
-  <aside>
-    <div id="aside_box">
-      <%@include file="../include/aside.jsp"%>
-    </div>
-  </aside>
 
   <div id="container_box">
     <h2>상품 등록</h2>

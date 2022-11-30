@@ -17,14 +17,15 @@ public class MailConfig {
     @Bean
     public JavaMailSender mailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-
+        System.setProperty("https.protocols", "TLSv1.2");
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
         mailSender.setUsername("sangyeobchu@gmail.com");
         mailSender.setPassword("aktbvoumawjmpfll");
-
+        
         Properties javaMailProperties = new Properties();
-
+        javaMailProperties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        javaMailProperties.put("mail.smtp.ssl.protocols", "TLSv1.2");
         javaMailProperties.put("mail.smtp.starttls.enable", "true");
         javaMailProperties.put("mail.smtp.auth", "true");
         javaMailProperties.put("mail.transport.protocol", "smtp");

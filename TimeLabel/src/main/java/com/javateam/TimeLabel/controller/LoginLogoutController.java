@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,10 +27,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.Random;
 
 
-    @Controller
+@Controller
 @RequestMapping("/user")
 public class LoginLogoutController {
 
@@ -75,7 +75,6 @@ public class LoginLogoutController {
 
         if(bindingResult.hasErrors()) {
             // 에러 발생시 다시 로그인 화면으로 이동
-
             return "login";
 
         }
@@ -110,8 +109,8 @@ public class LoginLogoutController {
 
     }
 
-    @GetMapping("/logout")
-    public String logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    @GetMapping(value="/logout")
+    public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 세션 제거
     	log.info("로그아웃 실행!!!!!");
     	log.info("request={}", request);
@@ -122,14 +121,11 @@ public class LoginLogoutController {
             session.invalidate();
             response.setContentType("text/html; charset=UTF-8");
             PrintWriter out = response.getWriter();
-            out.print("<script>alert('로그아웃 되었습니다.'); " +
-                    "location.href = 'redirect:/user/login'; " +
-                    "</script>");
+            out.print("<script>alert('로그아웃 되었습니다.'); location.href = '/user/login'; </script>");
             out.flush();
             // 세션 없어지고 알림까지 나오는데 화면이 안나옴?????
         }
         log.info("로그아웃중");
-        return "redirect:/user/login";
     }
 
 

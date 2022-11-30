@@ -23,13 +23,12 @@
     </resultMap>
 
     <sql id="saveProduct">
-        PRODUCT_NAME
-        ,
+        PRODUCT_NAME,
         PRODUCT_CATEGORY_INDEX,
         PRODUCT_PRICE,
         PRODUCT_INFO,
         PRODUCT_MAIN_IMAGE,
-        PRODUCT_DETAIL_IMAGE1,
+        PRODUCT_DETAIL_IMAGE1
     </sql>
 
     <sql id="updateProduct">
@@ -45,8 +44,7 @@
     </sql>
 
     <sql id="searchProduct">
-        PRODUCT_INDEX
-        ,
+        PRODUCT_INDEX,
  		PRODUCT_NAME,
         PRODUCT_CATEGORY_INDEX,
         PRODUCT_PRICE,
@@ -67,9 +65,7 @@
         insert into PRODUCT(
         <include refid="saveProduct"></include>
         )
-        values(#{productName},#{productCategoryIndex},
-        #{productPrice},#{productInfo},#{productMainImage},
-        #{productThumbImage}
+        values(#{productName},#{productCategoryIndex}, #{productPrice},#{productInfo},#{productMainImage}, #{productThumbImage})
     </insert>
 
 

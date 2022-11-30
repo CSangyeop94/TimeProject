@@ -30,7 +30,7 @@
             <div class="id_wrap">
                 <div class="id_password">패스워드</div>
                 <div class="id_input_box">
-                    <input class="id_input" name="userPw" type="password">
+                    <input class="id_input" name="userPw" type="text" value="${user.userPw} ">
                 </div>
             </div>
             <div class="user_wrap">
@@ -57,6 +57,10 @@
                     <div class="address_input_1_box">
                         <input class="address_input_1" name="userZip" value="${user.userZip}" type="text">
                     </div>
+                    <div class="address_button" onclick="execution_daum_address()">
+						<span>주소찾기</span>
+					</div>
+					<div class="clearfix"></div>
                 </div>
                 <div class="address_input_2_wrap">
                     <div class="address_input_2_box">
@@ -70,7 +74,9 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">회원 정보 수정</button>
+            <div class="join_button_wrap">
+            <button type="submit" class="join_button">회원 정보 수정</button>
+			</div>        
         </form>
     </div>
 </div>

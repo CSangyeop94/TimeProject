@@ -109,7 +109,7 @@
                 </c:if>
                 <input type="hidden" value="${item.productIndex}" name="productIndex${st.count}"/>
                 <input type="hidden" class="individual_discountedPrice_input"
-                       name="discounted${st.count} " value="${item.discountedPrice}">
+                       name="discountedPrice${st.count} " value="${item.discountedPrice}">
                 <input type="hidden" class="individual_productName_input" name="productName${st.count}"
                        value="${item.productName}">
                 <input type="hidden" class="individual_productIndex_input"
@@ -277,18 +277,22 @@
     // var IMP = window.IMP; // 생략 가능
     <%--var Name = "<c:out value='${item.productName}'/>";--%>
     <%--var Price = "<c:out value='${item.productPrice}'/>";--%>
-    var Name = '${loginUser.userName}'; // js에서 el 사용법
+    var Name = '${cartList.get(0).productName}'; // js에서 el 사용법
+    if(${cartList.size()}!=1)
+    	Name+=" 외 "+'${cartList.size()-1}'+"개";
     // var Price = '${fn:length(item)}';
+    const rand=Math.random();
+    console.log(rand);
     IMP.init('imp80445812'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
 
     function requestPay() {
         IMP.request_pay({
             pg: "kakaopay",
             pay_method: "kpay",
-            merchant_uid: "ORD20180131-0000013",
+            merchant_uid: rand,
             // name: $(".individual_productName_input").val(),
             name: Name,
-            amount: 10000,
+            amount: ${totalDiscountPrice},
             // name: "king",
             // amount: 10000,
             buyer_email: "gildong@gmail.com",

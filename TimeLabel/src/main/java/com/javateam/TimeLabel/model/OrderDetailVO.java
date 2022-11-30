@@ -22,5 +22,5 @@ public class OrderDetailVO {
     // 상품 수량
     private int productCount;
     // 상품 금액
-    private int ProductPrice;
+    private int productPrice;
 }

@@ -116,8 +116,8 @@ public class OrderController {
         List<CartVO> cartList = new ArrayList<>();
         int cartListSize = Integer.parseInt(request.getParameter("cartListSize"));
         log.info("cartListSize={}", cartListSize);
-        CartVO cart = new CartVO();
         for (int i=0; i<cartListSize; i++) {
+        	CartVO cart = new CartVO();
             String number = String.valueOf(i + 1);
             log.info("number={}", number);
             log.info("request.getParameter CartIndex={}", request.getParameter("cartIndex" + number));
@@ -137,10 +137,6 @@ public class OrderController {
         String orderMessage = request.getParameter("orderMessage");
         log.info("Controller = orderMessage={}", orderMessage);
         orderService.order(cartList, orderMessage);
-
-        for(int i=0; i<cartListSize; i++){
-            cartList.remove(cart);
-        }
         return "redirect:/order/list";
     }
 

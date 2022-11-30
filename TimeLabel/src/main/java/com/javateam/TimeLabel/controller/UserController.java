@@ -1,5 +1,7 @@
 package com.javateam.TimeLabel.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Random;
 
@@ -32,6 +34,7 @@ import com.javateam.TimeLabel.model.UserVO;
 import com.javateam.TimeLabel.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 
 /**
@@ -152,7 +155,7 @@ public class UserController {
             mail.setMailFrom("sangyeobchu@gmail.com");
             mail.setMailTo(findUserData.userEmail);
             mail.setMailSubject("바뀐 비밀 번호 입니다.");
-            mail.setMailContent("바뀐 비밀 번호는 = " + chPw + "입니다. 비밀번호를 로그인후 변경해주세요");
+            mail.setMailContent("바뀐 비밀 번호는 = " + chPw + " 입니다. \n로그인후 비밀번호를 변경해주세요");
             mailService.sendEmail(mail);
 
             String encodePassword = passwordEncoder.encode(chPw);
@@ -179,25 +182,27 @@ public class UserController {
 
     // 회원 정보 수정 요청
     @PostMapping("/modifyUser")
-    public String modifyUser(@Validated UserVO user, BindingResult bindingResult,
+    public void modifyUser(@Validated UserVO user, BindingResult bindingResult, HttpServletResponse response,
                              HttpServletRequest request,
-                             Model model) {
+                             Model model) throws IOException {
+    	response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter();
         log.info("====== modifyUserPage ======>");
         log.info("회원 수정에 입력받은 데이터={}", user);
 
         if (bindingResult.hasErrors()) {
-            log.info("값이 안들어왔거나 잘못된값이 들어옴");
-            log.info("bindingResult={}", bindingResult);
-            return "redirect:/user/myPage";
+        	out.print("<script>alert('입력이 잘못되었습니다'); location.href = '/user/modifyUser'; </script>");
+            out.flush();
         }
-
+        
         String userPassword = user.getUserPw();
         String encodePassword = passwordEncoder.encode(userPassword);
         user.setUserPw(encodePassword);
 
         userService.updateUser(user);
-
-        return "redirect:/user/myPage";
+        
+        out.print("<script>alert('회원정보가 변경되었습니다'); location.href = '/'; </script>");
+        out.flush();
     }
 
     // 회원 탈퇴 화면
