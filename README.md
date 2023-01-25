@@ -87,7 +87,7 @@ Shopping Mall Website
 ![회원가입 페이지1](https://user-images.githubusercontent.com/100455259/214490013-5b180962-7c91-46ae-a0d8-298dbdb8a2ea.png)
 ![회원가입 확인](https://user-images.githubusercontent.com/100455259/214490015-99d873b4-69c0-4dea-8314-993ef24cc03d.png)
 
-# 메인 -> 상품클릭(상품상세페이지) -> 장바구니 -> 주문하기 -> 주문리스
+# 메인 -> 상품상세페이지 -> 장바구니 -> 주문하기 -> 주문리스트
 ![유저화면1](https://user-images.githubusercontent.com/100455259/214490153-0e6cd09f-d60a-4f98-a988-de8531bae2b0.png)
 ![상품상세페이지](https://user-images.githubusercontent.com/100455259/214490161-ed38710d-f83c-4bc0-b24e-d68f973d111f.png)
 ![장바구니1](https://user-images.githubusercontent.com/100455259/214490170-0db1b299-e8be-4047-b99d-fa9a9fd8950a.png)
