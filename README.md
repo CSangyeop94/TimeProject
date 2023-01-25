@@ -96,3 +96,11 @@ Shopping Mall Website
 ![구매목록 페이지1](https://user-images.githubusercontent.com/100455259/214490305-b978b681-de01-42b3-9e80-2500d15400d2.png)
 ![주문 상세페이지](https://user-images.githubusercontent.com/100455259/214490312-25b52e10-e443-49a2-a080-7f41b06aafc7.png)
 
+## 유저 비밀번호 찾기
+![비밀번호 찾기](https://user-images.githubusercontent.com/100455259/214494483-6654755e-e41c-410f-aa34-426b3b17f68b.png)
+### 아이디와 이메일을 입력 후 입력한 아이디에 입력된 이메일 true 시
+![비밀번호 찾기2](https://user-images.githubusercontent.com/100455259/214494497-734ac0a6-7554-4d10-aada-bc20135bc2ea.png)
+### 이메일이 전송되면서 변경된 비밀번호를 가르쳐줌
+![변경 비밀번호 전송](https://user-images.githubusercontent.com/100455259/214494501-354d3083-f6de-41e2-959c-b1a12c01380c.png)
+
+
