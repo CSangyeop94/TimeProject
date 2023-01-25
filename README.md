@@ -49,26 +49,39 @@ Shopping Mall Website
 * 이재영
 * 추상엽
 
-# 참고
+# 프로젝트 진행중 힘들었던점
+- Spring, MVC의 구조에 대한 이해도가 부족하여 DI, IOC, SpringBean등록 등 이해하는 데 오랜 시간이 걸렸습니다. 타 프로젝트들을 참고는 할수있지만 처음부터 그렇게 하면 복사 붙여넣기 한 거나 다름없다고 생각하기도 하였고(참고도 하긴 했습니다.) view   에서 form 사용시 데이터 전송받는것, model을 사용하여 view에 데이터 표출하는 법에 미숙하여 구현에 시간이 오래 걸렸습니다. 초기 회원가입 로그인 화면까지 1주소요..
+- 
+# 프로젝트를 진행하며 얻은점
+- 처음에는 이해가 쉽지 않아서 간단한 기능에도 오랜 시간을 소비하였지만 어느 정도 이해가 끝나고 나서 조원분들과 회의를 진행하면서 빠르게 프로젝트를 진행할 수 있었습니다.
+  덕분에 MVC구조를 이해 하였으며 Mybatis XML을 작성 할 수 있게 되었고, 인터셉터를 사용한 관리자가 아닌 유저들이 상품등록에 못하게 하는등  
 
-해당 프로젝트를 구현하면서 준비 사항(기초 학습을 위한 배경 지식이나 교재 공부), 팀원들끼리 정한 규칙들, 테크 일기(프로젝트 일지)를 통한 개발 과정들을 자세히 기록하였습니다.
+# 기억에 남는 코드
+-![image](https://user-images.githubusercontent.com/100455259/214492750-c4f7bed9-8dcf-47b3-b99b-ecaedd3748f5.png)
+![image](https://user-images.githubusercontent.com/100455259/214492867-75c676af-0bf0-400b-9812-19bb0047d91e.png)
+지금은 쉽지만 처음에 이해를 못 해서 많은 시간을 소비하였습니다. 회원가입 기능이 한번 잘되고 나서는 다른 기능들도 빠르게 진행할 수 있게 되어서 가장 기억에 남습니다.
 
-> https://cafe.naver.com/pjgroup1/
 # 메인 화면 구현
+
 ![화면1](https://user-images.githubusercontent.com/100455259/214489328-e821fdbb-d288-41e4-99ff-1678761852e0.png)
 ## 관리자 아이디 로그인시 -> 관리자 화면
+
 ![관리자 화면2](https://user-images.githubusercontent.com/100455259/214489247-66225d1c-ce0c-462c-84ef-bc588f5ddc80.png)
 # 회원목록
+
 ![회원목록1](https://user-images.githubusercontent.com/100455259/214489955-a3315efd-cabf-4959-9b77-e7769e875239.png)
 # 상품등록 
+
 ![상품등록1](https://user-images.githubusercontent.com/100455259/214489782-55f1f56a-74dc-40d6-9001-b920d87bf812.png)
 ![상품등록2](https://user-images.githubusercontent.com/100455259/214489787-aeae30d6-0f51-42d8-a6fd-36b20ddcde6b.png)
 ![상품등록확인](https://user-images.githubusercontent.com/100455259/214489777-7d69e76b-c5be-4c2c-8ed2-8aa96aac2395.png)
 ## 유저아이디 회원가입,로그인시 유저용 화면
+
 ![화면1](https://user-images.githubusercontent.com/100455259/214490009-8627f233-8b6f-4e21-b40c-75c5c6dbe2d8.png)
 ![회원가입 페이지1](https://user-images.githubusercontent.com/100455259/214490013-5b180962-7c91-46ae-a0d8-298dbdb8a2ea.png)
 ![회원가입 확인](https://user-images.githubusercontent.com/100455259/214490015-99d873b4-69c0-4dea-8314-993ef24cc03d.png)
 # 메인 -> 상품클릭(상품상세페이지) -> 장바구니 -> 주문하기 -> 주문리스
+
 ![유저화면1](https://user-images.githubusercontent.com/100455259/214490153-0e6cd09f-d60a-4f98-a988-de8531bae2b0.png)
 ![상품상세페이지](https://user-images.githubusercontent.com/100455259/214490161-ed38710d-f83c-4bc0-b24e-d68f973d111f.png)
 ![장바구니1](https://user-images.githubusercontent.com/100455259/214490170-0db1b299-e8be-4047-b99d-fa9a9fd8950a.png)
