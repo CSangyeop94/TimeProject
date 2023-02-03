@@ -42,7 +42,7 @@ Shopping Mall Website
 * 변승현
 * 이건희
 * 이재영
-* 추상엽 -(https://s-tudyprogramming.tistory.com/ 개인 그블로그)
+* 추상엽 -(https://s-tudyprogramming.tistory.com/ 개인블로그)
 
 
 # 프로젝트 진행중 힘들었던점(추상엽)
